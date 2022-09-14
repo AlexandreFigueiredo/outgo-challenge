@@ -1,0 +1,12 @@
+.headerContent {
+    padding: 1.125rem 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+        font: 900 1rem 'Merriweather', serif;
+        color: var(--blue-900);
+    }
+}
