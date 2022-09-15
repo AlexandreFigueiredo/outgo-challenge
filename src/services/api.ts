@@ -22,7 +22,18 @@ type IGetGenresAndRuntimeByMovieIdResponse = {
     runtime: number;
 }
 
-export const getGenresAndRuntimeByMovieId = async (movieId: number): Promise<IGetGenresAndRuntimeByMovieIdResponse> => {
+type IGetDetailsByMovieIdResponse = {
+    genres: ITag[];
+    runtime: number;
+    
+}
+
+export const getGenresAndRuntimeByMovieId = async (movieId: string | undefined): Promise<IGetGenresAndRuntimeByMovieIdResponse> => {
+    const response = await fetch(`${BASE_URL}/${movieId}?api_key=${API_KEY}`)
+    return response.json()
+}
+
+export const getDetailsByMovieId = async (movieId: string | undefined): Promise<IGetDetailsByMovieIdResponse> => {
     const response = await fetch(`${BASE_URL}/${movieId}?api_key=${API_KEY}`)
     return response.json()
 }
