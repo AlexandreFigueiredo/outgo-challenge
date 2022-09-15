@@ -1,0 +1,68 @@
+.cardSmall {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  .cardImg {
+    height: 120px;
+    width: 85px;
+    background-color: var(--gray);
+    border-radius: 6px;
+  }
+
+  .cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .cardTitle {
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+    }
+
+    .cardRating {
+      display: flex;
+      align-items: center;
+
+      &Icon {
+        margin-right: 0.25rem;
+      }
+
+      span {
+        font-size: 0.75rem;
+        color: var(--gray);
+        letter-spacing: 0.02em;
+      }
+    }
+
+    .cardTags {
+      display: flex;
+      gap: 0.5rem;
+
+      span {
+        font-size: 0.5rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 100px;
+
+        color: var(--blue-400);
+        background-color: var(--blue-100);
+        text-transform: uppercase;
+      }
+    }
+
+    .cardDuration {
+      display: flex;
+      align-items: center;
+
+      &Icon {
+        margin-right: 0.25rem;
+      }
+
+      span {
+        font-size: 0.75rem;
+        color: var(--black);
+        letter-spacing: 0.02em;
+      }
+    }
+  }
+}

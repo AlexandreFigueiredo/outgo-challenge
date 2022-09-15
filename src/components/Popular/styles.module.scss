@@ -1,10 +1,17 @@
 .popularContainer {
-    padding: 0 1.5rem;
-    margin-top: 1.5rem;
+  padding: 0 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .popularTitle {
-    font: 900 1rem 'Merriweather', serif;
-    color: var(--blue-900);
-    display: inline-block;
+  font: 900 1rem "Merriweather", serif;
+  color: var(--blue-900);
+  display: inline-block;
+}
+
+.popularList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
 }
