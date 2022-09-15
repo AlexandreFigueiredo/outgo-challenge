@@ -13,7 +13,6 @@
   .cardContent {
     display: flex;
     flex-direction: column;
-    flex-basis: 80%;
     gap: 0.5rem;
 
     .cardTitle {
@@ -36,6 +35,7 @@
 
     .cardTags {
       display: flex;
+      flex-wrap: wrap;
       gap: 0.5rem;
 
       span {

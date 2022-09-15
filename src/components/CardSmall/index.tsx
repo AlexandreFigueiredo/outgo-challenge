@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
+import { getGenresAndRuntimeByMovieId, ITag } from '../../services/api';
 import { Rating } from '../Rating';
 import styles from './styles.module.scss'
 
@@ -10,34 +11,28 @@ interface CardSmallProps {
     rating: string;
 }
 
-interface ITag {
-    id: number,
-    name: string
-}
-
-export function CardSmall(props: CardSmallProps) {
+export function CardSmall({id, imageUrl, rating, title}: CardSmallProps) {
 
     const [tags, setTags] = useState<ITag[]>([])
     const [runtime, setRuntime] = useState<number>(0)
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${props.id}?api_key=45d7491a8784c512d9adb5b759990897&language=en-US`)
-        .then(response => response.json())
-        .then(data => {
-            setTags(data.genres);
-            setRuntime(data.runtime);
+        getGenresAndRuntimeByMovieId(id)
+        .then(({genres, runtime}) => {
+            setTags(genres);
+            setRuntime(runtime);
         })
     }, [])
 
     return (
-        <Link to={`/movie/${props.id}`}>
+        <Link to={`/movie/${id}`}>
             <div className={styles.cardSmall}>
-                <img src={`https://image.tmdb.org/t/p/original${props.imageUrl}`} className={styles.cardImg} />
+                <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} className={styles.cardImg} />
                 <div className={styles.cardContent}>
                     <h3 className={styles.cardTitle}>
-                        {props.title}
+                        {title}
                     </h3>
-                    <Rating score={props.rating} />
+                    <Rating score={rating} />
                     <div className={styles.cardTags}>
                         {tags.map((tag) => <span key={tag.id}>{tag.name}</span>)}
                     </div>
