@@ -10,6 +10,39 @@
     margin-bottom: 1rem;
 }
 
-.nowShowingImg {
-    width: 100%;
+.nowShowingList {
+    display: flex;
+    gap: 1rem;
+}
+
+.carouselCard {
+    display: flex;
+    flex-direction: column;
+    width: 145px;
+    gap: .75rem;
+
+    .cardImg {
+        height: 13.25rem;
+        width: 8.938rem;
+        background-color: var(--gray);
+        border-radius: 6px;
+    }
+
+    .cardTitle {
+        font-size: .875rem;
+        line-height: 1.125rem;
+        letter-spacing: 0.02em;
+    }
+
+    .cardRating {
+        &Icon {
+            margin-right: 0.25rem;
+        }
+
+        span {
+            font-size: .75rem;
+            color: var(--gray);
+            letter-spacing: 0.02em;
+        }
+    }
 }
