@@ -43,7 +43,7 @@ export function CardSmall(props: CardSmallProps) {
                     </div>
                     <div className={styles.cardDuration}>
                         <img className={styles.cardDurationIcon} src="/images/icon-duration.png" alt="Duração" />
-                        <span>{runtime}</span>
+                        <span>{`${Math.floor(runtime / 60)}h ${runtime % 60}min`}</span>
                     </div>
                 </div>
             </div>
