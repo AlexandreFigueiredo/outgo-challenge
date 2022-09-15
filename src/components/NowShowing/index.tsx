@@ -6,10 +6,11 @@ import Slider from 'react-slick'
 import styles from './styles.module.scss'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { getNowPlayingMovies, IMovie } from '../../services/api';
 
 export function NowShowing() {
 
-    const [movies, setMovies] = useState<IMovies[]>([])
+    const [movies, setMovies] = useState<IMovie[]>([])
 
     const settings = {
         dots: false,
@@ -19,10 +20,9 @@ export function NowShowing() {
     };
 
     useEffect(() => {
-        fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=45d7491a8784c512d9adb5b759990897&language=en-US&page=1')
-        .then(response => response.json())
-        .then(data => {
-            setMovies(data.results);
+        getNowPlayingMovies()
+        .then(({results}) => {
+            setMovies(results);
         })
     }, [])
 
