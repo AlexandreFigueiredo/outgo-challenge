@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Rating } from '../Rating';
 import styles from './styles.module.scss'
 
 interface CardSmallProps {
@@ -21,10 +22,7 @@ export function CardSmall(props: CardSmallProps) {
                     <h3 className={styles.cardTitle}>
                         {props.title}
                     </h3>
-                    <div className={styles.cardRating}>
-                        <img className={styles.cardRatingIcon} src="/images/icon-star.png" alt="Estrela" />
-                        <span>{props.rating}/10 TMDB</span>
-                    </div>
+                    <Rating score={props.rating} />
                     <div className={styles.cardTags}>
                         {props.tags.map((tag) => <span>{tag}</span>)}
                     </div>

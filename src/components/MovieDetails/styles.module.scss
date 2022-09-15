@@ -1,0 +1,90 @@
+.movieDetails {
+  border-radius: 8px 8px 0 0;
+  background-color: var(--white);
+
+  margin-top: -0.5rem;
+  padding: 1.5rem;
+
+  .movieHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .movieTitle {
+      font-size: 1.25rem;
+    }
+
+    .movieTags {
+      display: flex;
+      gap: 0.5rem;
+
+      span {
+        font-size: 0.5rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 100px;
+
+        color: var(--blue-400);
+        background-color: var(--blue-100);
+        text-transform: uppercase;
+      }
+    }
+
+    .movieInformation {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.25rem;
+
+      .informationWrapper {
+        padding-right: 3rem;
+
+        .informationTitle {
+          color: var(--gray);
+          font-weight: 400;
+          font-size: 0.75rem;
+        }
+
+        .informationContent {
+          font-weight: 600;
+          font-size: 0.75rem;
+        }
+      }
+    }
+
+    .movieDuration {
+      display: flex;
+      align-items: center;
+
+      &Icon {
+        margin-right: 0.25rem;
+      }
+
+      span {
+        font-size: 0.75rem;
+        color: var(--black);
+      }
+    }
+  }
+
+  .movieDescription {
+    margin-top: 1.5rem;
+
+    .descriptionTitle {
+      font: 900 1rem "Merriweather", serif;
+      color: var(--blue-900);
+    }
+
+    .descriptionContent {
+      margin-top: 0.5rem;
+      color: var(--gray);
+      font-size: 0.75rem;
+    }
+  }
+  .movieCast {
+    margin-top: 1.5rem;
+
+    .castTitle {
+      font: 900 1rem "Merriweather", serif;
+      color: var(--blue-900);
+    }
+  }
+}

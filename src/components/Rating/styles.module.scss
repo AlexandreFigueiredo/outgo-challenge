@@ -1,0 +1,13 @@
+.rating {
+    display: flex;
+    align-items: center;
+
+    &Icon {
+      margin-right: 0.25rem;
+    }
+
+    span {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+  }
