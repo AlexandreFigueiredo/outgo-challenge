@@ -14,7 +14,8 @@
 // Reset
 html {
   box-sizing: border-box;
-  font: 400 16px "Mulish", sans-serif; 
+  font: 400 16px "Mulish", sans-serif;
+  letter-spacing: 0.02em;
 }
 
 * {
@@ -40,4 +41,8 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h3 {
+  font-weight: 700;
 }
