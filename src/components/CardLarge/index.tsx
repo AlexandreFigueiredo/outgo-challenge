@@ -13,9 +13,7 @@ export function CardLarge(props: CardLargeProps) {
     return (
         <Link to={`/movie/${props.id}`}>
             <div className={styles.cardLarge}>
-                <div className={styles.cardImg}>
-                    {props.imageUrl}
-                </div>
+                <img src={`https://image.tmdb.org/t/p/original${props.imageUrl}`} className={styles.cardImg} />
                 <h3 className={styles.cardTitle}>
                     {props.title}
                 </h3>
