@@ -19,10 +19,10 @@ export function NowShowing() {
             <h2 className={styles.nowShowingTitle}>Now Showing</h2>
 
             <Slider {...settings}>
-                <CardLarge imageUrl='' title='Spiderman' rating='8.0' />
-                <CardLarge imageUrl='' title='Spiderman' rating='8.0' />
-                <CardLarge imageUrl='' title='Spiderman' rating='8.0' />
-                <CardLarge imageUrl='' title='Spiderman' rating='8.0' />
+                <CardLarge id={345} imageUrl='' title='Spiderman' rating='8.0' />
+                <CardLarge id={342} imageUrl='' title='Spiderman' rating='8.0' />
+                <CardLarge id={2} imageUrl='' title='Spiderman' rating='8.0' />
+                <CardLarge id={678} imageUrl='' title='Spiderman' rating='8.0' />
             </Slider>
         </div>
     )
