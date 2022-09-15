@@ -17,7 +17,7 @@ export function CardSmall({id, imageUrl, rating, title}: CardSmallProps) {
     const [runtime, setRuntime] = useState<number>(0)
 
     useEffect(() => {
-        getGenresAndRuntimeByMovieId(id)
+        getGenresAndRuntimeByMovieId(id.toString())
         .then(({genres, runtime}) => {
             setTags(genres);
             setRuntime(runtime);
