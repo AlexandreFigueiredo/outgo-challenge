@@ -32,6 +32,10 @@ type IGetGenresAndRuntimeByMovieIdResponse = {
     runtime: number;
 }
 
+type IGetCastByMovieIdResponse = {
+    cast: any;
+}
+
 type IGetDetailsByMovieIdResponse = {
     original_title: string;
     overview: string;
@@ -49,6 +53,11 @@ export const getGenresAndRuntimeByMovieId = async (movieId: string | undefined):
 
 export const getDetailsByMovieId = async (movieId: string | undefined): Promise<IGetDetailsByMovieIdResponse> => {
     const response = await fetch(`${BASE_URL}/${movieId}?api_key=${API_KEY}`)
+    return response.json()
+}
+
+export const getCastByMovieId = async (movieId: string | undefined): Promise<IGetCastByMovieIdResponse> => {
+    const response = await fetch(`${BASE_URL}/${movieId}/credits?api_key=${API_KEY}&language=en-US`)
     return response.json()
 }
 

@@ -27,7 +27,8 @@ export function Movie() {
                 <MovieHeader />
                 <PlayButton trailerUrl={''} />
             </header>
-            <MovieDetails 
+            <MovieDetails
+                id={movieID}
                 title={movie.original_title}
                 rating={movie.vote_average}
                 description={movie.overview}

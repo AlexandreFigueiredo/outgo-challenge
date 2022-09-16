@@ -1,0 +1,30 @@
+.cast {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+
+    margin-top: 1rem;
+
+    .castCard {
+        flex-basis: 20%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+
+        .castImg {
+            height: 72px;
+            width: 72px;
+            background-color: var(--black);
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .castName {
+            font-size: .75rem;
+            font-weight: 400;
+            color: var(--blue-900);
+        }
+    }
+}

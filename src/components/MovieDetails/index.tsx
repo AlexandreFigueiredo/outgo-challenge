@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
 import { ITag } from '../../services/api';
+import { Cast } from '../Cast';
 import { Rating } from '../Rating'
 import styles from './styles.module.scss'
 
 interface IMovieDetailsProps {
+    id?: string;
     title: string;
     rating: number;
     tags: ITag[];
@@ -13,6 +14,7 @@ interface IMovieDetailsProps {
 }
 
 export function MovieDetails({ 
+    id,
     title,
     rating,
     tags,
@@ -56,6 +58,9 @@ export function MovieDetails({
             </div>
             <div className={styles.movieCast}>
                 <h4 className={styles.castTitle}>Cast</h4>
+                <div className={styles.castList}>
+                    <Cast movieId={id} />
+                </div>
             </div>
         </div>
     )
