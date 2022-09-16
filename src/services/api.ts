@@ -13,6 +13,16 @@ export type IMovie = {
     vote_average: string;
 }
 
+export type IMovieDetail = {
+    original_title: string;
+    overview: string;
+    vote_average: number;
+    backdrop_path: string;
+    genres: ITag[];
+    runtime: number;
+    original_language: string;
+}
+
 type IGetMoviesResponse = {
     results: IMovie[];
 }
@@ -23,9 +33,13 @@ type IGetGenresAndRuntimeByMovieIdResponse = {
 }
 
 type IGetDetailsByMovieIdResponse = {
+    original_title: string;
+    overview: string;
+    vote_average: number;
+    backdrop_path: string;
     genres: ITag[];
     runtime: number;
-    
+    original_language: string;
 }
 
 export const getGenresAndRuntimeByMovieId = async (movieId: string | undefined): Promise<IGetGenresAndRuntimeByMovieIdResponse> => {

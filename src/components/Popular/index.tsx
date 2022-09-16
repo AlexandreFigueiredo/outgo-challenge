@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
-import { getPopularMovies } from '../../services/api'
-import { IMovies } from '../../utils/IMovies'
+import { getPopularMovies, IMovie } from '../../services/api'
 import { CardSmall } from '../CardSmall'
 import styles from './styles.module.scss'
 
 export function Popular() {
 
-    const [movies, setMovies] = useState<IMovies[]>([])
+    const [movies, setMovies] = useState<IMovie[]>([])
     
     useEffect(()=>{
         getPopularMovies()

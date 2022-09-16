@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
 interface RatingProps {
-  score: string;
+  score: number | string;
 }
 
 export function Rating(props: RatingProps) {

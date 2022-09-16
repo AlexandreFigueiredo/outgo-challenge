@@ -1,35 +1,58 @@
+import { useEffect } from 'react';
+import { ITag } from '../../services/api';
 import { Rating } from '../Rating'
 import styles from './styles.module.scss'
 
-export function MovieDetails() {
+interface IMovieDetailsProps {
+    title: string;
+    rating: number;
+    tags: ITag[];
+    duration: number;
+    description: string;
+    language: string;
+}
+
+export function MovieDetails({ 
+    title,
+    rating,
+    tags,
+    duration,
+    description,
+    language
+}: IMovieDetailsProps) {
+
     return (
         <div className={styles.movieDetails}>
             <div className={styles.movieHeader}>
                 <h3 className={styles.movieTitle}>
-                    {'Spiderman: No Way Home'}
+                    {title}
                 </h3>
-                <Rating score={'9.3'} />
+                <Rating score={rating} />
                 <div className={styles.movieTags}>
-                    {['action', 'adventure'].map((tag) => <span>{tag}</span>)}
+                    {tags &&
+                        tags.map((tag) => <span key={tag.id}>{tag.name}</span>)
+                    }
                 </div>
                 <div className={styles.movieInformation}>
                     <div className={styles.informationWrapper}>
                         <h4 className={styles.informationTitle}>Length</h4>
-                        <p className={styles.informationContent}>2h 28min</p>
+                        <p className={styles.informationContent}>{`${Math.floor(duration / 60)}h ${duration % 60}min`}</p>
                     </div>
                     <div className={styles.informationWrapper}>
                         <h4 className={styles.informationTitle}>Language</h4>
-                        <p className={styles.informationContent}>English</p>
+                        {language &&
+                            <p className={styles.informationContent}>{language.toUpperCase()}</p>
+                        }
                     </div>
                     <div className={styles.informationWrapper}>
                         <h4 className={styles.informationTitle}>Rating</h4>
-                        <p className={styles.informationContent}>PG-13</p>
+                        <p className={styles.informationContent}>{rating}</p>
                     </div>
                 </div>
             </div>
             <div className={styles.movieDescription}>
                 <h4 className={styles.descriptionTitle}>Description</h4>
-                <p className={styles.descriptionContent}>With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.</p>
+                <p className={styles.descriptionContent}>{description}</p>
             </div>
             <div className={styles.movieCast}>
                 <h4 className={styles.castTitle}>Cast</h4>

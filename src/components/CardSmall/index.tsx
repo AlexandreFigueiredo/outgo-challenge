@@ -8,7 +8,7 @@ interface CardSmallProps {
     id: number;
     imageUrl: string;
     title: string;
-    rating: string;
+    rating: number;
 }
 
 export function CardSmall({id, imageUrl, rating, title}: CardSmallProps) {

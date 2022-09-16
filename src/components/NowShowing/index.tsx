@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { CardLarge } from '../CardLarge'
-import { IMovies } from '../../utils/IMovies';
 import Slider from 'react-slick'
 
 import styles from './styles.module.scss'
