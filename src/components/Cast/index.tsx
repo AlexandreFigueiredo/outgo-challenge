@@ -14,11 +14,13 @@ export function Cast({ movieId }: ICastProps) {
   const [cast, setCast] = useState<any>([]);
 
   useEffect(() => {
-    setIsLoading(true);
-    getCastByMovieId(movieId).then(({ cast }) => {
-      setCast(cast.slice(0, 8));
-    });
-    setIsLoading(false);
+    if (movieId) {
+      setIsLoading(true);
+      getCastByMovieId(movieId).then(({ cast }) => {
+        setCast(cast.slice(0, 8));
+      });
+      setIsLoading(false);
+    }
   }, []);
 
   return (

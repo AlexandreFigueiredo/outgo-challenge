@@ -8,7 +8,7 @@ import { ITag } from "../../services/api";
 import styles from "./styles.module.scss";
 
 interface IMovieDetailsProps {
-  id?: string;
+  movieId?: string;
   title: string;
   rating: string | number;
   tags: ITag[];
@@ -18,7 +18,7 @@ interface IMovieDetailsProps {
 }
 
 export function MovieDetails({
-  id,
+  movieId,
   title,
   rating,
   tags,
@@ -79,7 +79,7 @@ export function MovieDetails({
       <div className={styles.movieCast}>
         <h4 className={styles.castTitle}>Cast</h4>
         <div className={styles.castList}>
-          <Cast movieId={id} />
+          <Cast movieId={movieId} />
         </div>
       </div>
     </div>

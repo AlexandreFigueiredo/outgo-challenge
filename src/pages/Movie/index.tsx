@@ -5,29 +5,23 @@ import { MovieDetails } from "../../components/MovieDetails";
 import { MovieHeader } from "../../components/MovieHeader";
 import { PlayButton } from "../../components/PlayButton";
 
-import {
-  getDetailsByMovieId,
-  IMG_URL,
-  IMovieDetail,
-} from "../../services/api";
+import { getDetailsByMovieId, IMG_URL, IMovieDetail } from "../../services/api";
 
 import styles from "./styles.module.scss";
 
 export function Movie() {
+  const { movieId } = useParams();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { movieID } = useParams();
   const [movie, setMovie] = useState<IMovieDetail>({} as IMovieDetail);
 
-  const backgroundMovieHeaderPath = {
-    backgroundImage: `url(${IMG_URL}${movie.backdrop_path})`,
-  };
-
   useEffect(() => {
-    setIsLoading(true);
-    getDetailsByMovieId(movieID).then((response) => {
-      setMovie(response);
-    });
-    setIsLoading(false);
+    if (movieId) {
+      setIsLoading(true);
+      getDetailsByMovieId(movieId).then((response) => {
+        setMovie(response);
+      });
+      setIsLoading(false);
+    }
   }, []);
 
   return (
@@ -38,13 +32,17 @@ export function Movie() {
         <>
           <header
             className={styles.movieHeaderWrapper}
-            style={backgroundMovieHeaderPath}
+            style={
+              movie.backdrop_path
+                ? { backgroundImage: `url(${IMG_URL}${movie.backdrop_path})` }
+                : {}
+            }
           >
             <MovieHeader />
             <PlayButton />
           </header>
           <MovieDetails
-            id={movieID}
+            movieId={movieId}
             title={movie.original_title}
             rating={movie.vote_average}
             description={movie.overview}

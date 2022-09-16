@@ -43,32 +43,24 @@ type IGetCastByMovieIdResponse = {
   cast: ICast[];
 };
 
-type IGetDetailsByMovieIdResponse = {
-  original_title: string;
-  overview: string;
-  vote_average: number;
-  backdrop_path: string;
-  genres: ITag[];
-  runtime: number;
-  original_language: string;
-};
+type IGetDetailsByMovieIdResponse = IMovieDetail;
 
 export const getGenresAndRuntimeByMovieId = async (
-  movieId: string | undefined
+  movieId: string
 ): Promise<IGetGenresAndRuntimeByMovieIdResponse> => {
   const response = await fetch(`${BASE_URL}/${movieId}?api_key=${API_KEY}`);
   return response.json();
 };
 
 export const getDetailsByMovieId = async (
-  movieId: string | undefined
+  movieId: string
 ): Promise<IGetDetailsByMovieIdResponse> => {
   const response = await fetch(`${BASE_URL}/${movieId}?api_key=${API_KEY}`);
   return response.json();
 };
 
 export const getCastByMovieId = async (
-  movieId: string | undefined
+  movieId: string
 ): Promise<IGetCastByMovieIdResponse> => {
   const response = await fetch(
     `${BASE_URL}/${movieId}/credits?api_key=${API_KEY}&language=en-US`
