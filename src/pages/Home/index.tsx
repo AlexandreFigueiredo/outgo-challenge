@@ -3,12 +3,11 @@ import { NowShowing } from "../../components/NowShowing";
 import { Popular } from "../../components/Popular";
 
 export function Home() {
-
-    return (
-        <>
-            <Header />
-            <NowShowing />
-            <Popular />
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <NowShowing />
+      <Popular />
+    </>
+  );
 }

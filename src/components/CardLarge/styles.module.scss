@@ -1,32 +1,32 @@
 .cardLarge {
+  display: flex;
+  flex-direction: column;
+  width: 145px;
+  gap: 0.75rem;
+
+  .cardImg {
+    height: 13.25rem;
+    width: 8.938rem;
+    background-color: var(--gray);
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  .cardTitle {
+    font-size: 0.875rem;
+  }
+
+  .cardRating {
     display: flex;
-    flex-direction: column;
-    width: 145px;
-    gap: .75rem;
+    align-items: center;
 
-    .cardImg {
-        height: 13.25rem;
-        width: 8.938rem;
-        background-color: var(--gray);
-        border-radius: 6px;
-        object-fit: cover;
+    &Icon {
+      margin-right: 0.25rem;
     }
 
-    .cardTitle {
-        font-size: .875rem;
+    span {
+      font-size: 0.75rem;
+      color: var(--gray);
     }
-
-    .cardRating {
-        display: flex;
-        align-items: center;
-        
-        &Icon {
-            margin-right: 0.25rem;
-        }
-
-        span {
-            font-size: .75rem;
-            color: var(--gray);
-        }
-    }
+  }
 }

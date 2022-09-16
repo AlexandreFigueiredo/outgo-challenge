@@ -5,5 +5,5 @@ export function App() {
     <div className="App">
       <Router />
     </div>
-  )
+  );
 }

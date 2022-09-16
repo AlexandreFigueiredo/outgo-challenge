@@ -1,47 +1,53 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
-import { getGenresAndRuntimeByMovieId, IMG_URL, ITag } from '../../services/api';
-import { Rating } from '../Rating';
-import styles from './styles.module.scss'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  getGenresAndRuntimeByMovieId,
+  IMG_URL,
+  ITag,
+} from "../../services/api";
+import { Rating } from "../Rating";
+import styles from "./styles.module.scss";
 
 interface CardSmallProps {
-    id: number;
-    imageUrl: string;
-    title: string;
-    rating: number;
+  id: number;
+  imageUrl: string;
+  title: string;
+  rating: number | string;
 }
 
-export function CardSmall({id, imageUrl, rating, title}: CardSmallProps) {
+export function CardSmall({ id, imageUrl, rating, title }: CardSmallProps) {
+  const [tags, setTags] = useState<ITag[]>([]);
+  const [runtime, setRuntime] = useState<number>(0);
 
-    const [tags, setTags] = useState<ITag[]>([])
-    const [runtime, setRuntime] = useState<number>(0)
+  useEffect(() => {
+    getGenresAndRuntimeByMovieId(id.toString()).then(({ genres, runtime }) => {
+      setTags(genres);
+      setRuntime(runtime);
+    });
+  }, []);
 
-    useEffect(() => {
-        getGenresAndRuntimeByMovieId(id.toString())
-        .then(({genres, runtime}) => {
-            setTags(genres);
-            setRuntime(runtime);
-        })
-    }, [])
-
-    return (
-        <Link to={`/movie/${id}`}>
-            <div className={styles.cardSmall}>
-                <img src={`${IMG_URL}${imageUrl}`} className={styles.cardImg} />
-                <div className={styles.cardContent}>
-                    <h3 className={styles.cardTitle}>
-                        {title}
-                    </h3>
-                    <Rating score={rating.toString()} />
-                    <div className={styles.cardTags}>
-                        {tags.map((tag) => <span key={tag.id}>{tag.name}</span>)}
-                    </div>
-                    <div className={styles.cardDuration}>
-                        <img className={styles.cardDurationIcon} src="/images/icon-duration.png" alt="Duração" />
-                        <span>{`${Math.floor(runtime / 60)}h ${runtime % 60}min`}</span>
-                    </div>
-                </div>
-            </div>
-        </Link>
-    )
+  return (
+    <Link to={`/movie/${id}`}>
+      <div className={styles.cardSmall}>
+        <img src={`${IMG_URL}${imageUrl}`} className={styles.cardImg} />
+        <div className={styles.cardContent}>
+          <h3 className={styles.cardTitle}>{title}</h3>
+          <Rating score={rating.toString()} />
+          <div className={styles.cardTags}>
+            {tags.map((tag) => (
+              <span key={tag.id}>{tag.name}</span>
+            ))}
+          </div>
+          <div className={styles.cardDuration}>
+            <img
+              className={styles.cardDurationIcon}
+              src="/images/icon-duration.png"
+              alt="Duração"
+            />
+            <span>{`${Math.floor(runtime / 60)}h ${runtime % 60}min`}</span>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
 }

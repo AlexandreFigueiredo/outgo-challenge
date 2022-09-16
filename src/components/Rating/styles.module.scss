@@ -1,14 +1,14 @@
 .rating {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    &Icon {
-      margin-right: 0.25rem;
-      color: var(--yellow-900);
-    }
-
-    span {
-      font-size: 0.75rem;
-      color: var(--gray);
-    }
+  &Icon {
+    margin-right: 0.25rem;
+    color: var(--yellow-900);
   }
+
+  span {
+    font-size: 0.75rem;
+    color: var(--gray);
+  }
+}

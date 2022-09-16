@@ -1,4 +1,4 @@
-import { AiFillStar } from 'react-icons/ai';
+import { AiFillStar } from "react-icons/ai";
 import styles from "./styles.module.scss";
 
 interface RatingProps {
