@@ -29,11 +29,11 @@ export function Movie() {
       setMovie(response);
     });
 
-    // getTrailerByMovieId(movieID).then(({ results }) => {
-    //   setTrailer(
-    //     results.filter((result) => result.type === "Trailer").slice(0, 1)
-    //   );
-    // });
+    getTrailerByMovieId(movieID).then(({ results }) => {
+      setTrailer(
+        results.filter((result) => result.type === "Trailer").slice(0, 1)
+      );
+    });
 
     setIsLoading(false);
   }, []);
@@ -49,7 +49,7 @@ export function Movie() {
             style={backgroundMovieHeaderPath}
           >
             <MovieHeader />
-            <PlayButton trailerUrl={""} />
+            <PlayButton trailerUrl={'BdJKm16Co6M'} />
           </header>
           <MovieDetails
             id={movieID}
