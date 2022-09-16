@@ -1,15 +1,16 @@
 import { AiFillStar } from "react-icons/ai";
+
 import styles from "./styles.module.scss";
 
-interface RatingProps {
-  score: number | string;
+interface IRatingProps {
+  score: string| number;
 }
 
-export function Rating(props: RatingProps) {
+export function Rating({ score }: IRatingProps) {
   return (
     <div className={styles.rating}>
       <AiFillStar className={styles.ratingIcon} />
-      <span>{props.score}/10 TMDB</span>
+      <span>{score}/10 TMDB</span>
     </div>
   );
 }

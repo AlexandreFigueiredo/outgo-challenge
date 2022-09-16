@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Loader } from "../Loader";
+import { Rating } from "../Rating";
+
 import {
   getGenresAndRuntimeByMovieId,
   IMG_URL,
   ITag,
 } from "../../services/api";
-import { Loader } from "../Loader";
-import { Rating } from "../Rating";
+
 import styles from "./styles.module.scss";
 
-interface CardSmallProps {
+interface ICardSmallProps {
   id: number;
   imageUrl: string;
   title: string;
-  rating: number | string;
+  rating: string | number;
 }
 
-export function CardSmall({ id, imageUrl, rating, title }: CardSmallProps) {
+export function CardSmall({ id, imageUrl, rating, title }: ICardSmallProps) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [tags, setTags] = useState<ITag[]>([]);
   const [runtime, setRuntime] = useState<number>(0);

@@ -1,9 +1,14 @@
 .headerContent {
   padding: 1.125rem 1.5rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  background-color: var(--white);
 
   h1 {
     font: 900 1rem "Merriweather", serif;

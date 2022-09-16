@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { getCastByMovieId, ICast, IMG_URL } from "../../services/api";
 import { Loader } from "../Loader";
+
+import { getCastByMovieId, ICast, IMG_URL } from "../../services/api";
+
 import styles from "./styles.module.scss";
 
 interface ICastProps {

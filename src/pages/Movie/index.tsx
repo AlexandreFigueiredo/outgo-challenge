@@ -4,20 +4,19 @@ import { Loader } from "../../components/Loader";
 import { MovieDetails } from "../../components/MovieDetails";
 import { MovieHeader } from "../../components/MovieHeader";
 import { PlayButton } from "../../components/PlayButton";
+
 import {
   getDetailsByMovieId,
-  getTrailerByMovieId,
   IMG_URL,
   IMovieDetail,
-  ITrailer,
 } from "../../services/api";
+
 import styles from "./styles.module.scss";
 
 export function Movie() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { movieID } = useParams();
   const [movie, setMovie] = useState<IMovieDetail>({} as IMovieDetail);
-  const [trailer, setTrailer] = useState<ITrailer[]>([]);
 
   const backgroundMovieHeaderPath = {
     backgroundImage: `url(${IMG_URL}${movie.backdrop_path})`,
@@ -28,13 +27,6 @@ export function Movie() {
     getDetailsByMovieId(movieID).then((response) => {
       setMovie(response);
     });
-
-    getTrailerByMovieId(movieID).then(({ results }) => {
-      setTrailer(
-        results.filter((result) => result.type === "Trailer").slice(0, 1)
-      );
-    });
-
     setIsLoading(false);
   }, []);
 
@@ -49,7 +41,7 @@ export function Movie() {
             style={backgroundMovieHeaderPath}
           >
             <MovieHeader />
-            <PlayButton trailerUrl={'BdJKm16Co6M'} />
+            <PlayButton />
           </header>
           <MovieDetails
             id={movieID}

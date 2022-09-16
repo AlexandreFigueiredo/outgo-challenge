@@ -1,15 +1,16 @@
-import { ITag } from "../../services/api";
+import { useState } from "react";
 import { Cast } from "../Cast";
 import { Rating } from "../Rating";
 import { RiBookmarkLine, RiBookmarkFill } from "react-icons/ri";
 
+import { ITag } from "../../services/api";
+
 import styles from "./styles.module.scss";
-import { Fragment, useState } from "react";
 
 interface IMovieDetailsProps {
   id?: string;
   title: string;
-  rating: number;
+  rating: string | number;
   tags: ITag[];
   duration: number;
   description: string;
@@ -44,7 +45,7 @@ export function MovieDetails({
             )}
           </div>
         </div>
-        <Rating score={(Math.round(rating * 100) / 100).toFixed(2)} />
+        <Rating score={(Math.round(Number(rating) * 100) / 100).toFixed(2)} />
         <div className={styles.movieTags}>
           {tags && tags.map((tag) => <span key={tag.id}>{tag.name}</span>)}
         </div>
@@ -66,7 +67,7 @@ export function MovieDetails({
           <div className={styles.informationWrapper}>
             <h4 className={styles.informationTitle}>Rating</h4>
             <p className={styles.informationContent}>
-              {(Math.round(rating * 100) / 100).toFixed(2)}
+              {(Math.round(Number(rating) * 100) / 100).toFixed(2)}
             </p>
           </div>
         </div>

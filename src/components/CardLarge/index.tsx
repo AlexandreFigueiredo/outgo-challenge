@@ -1,22 +1,24 @@
 import { Link } from "react-router-dom";
 import { Rating } from "../Rating";
+
 import { IMG_URL } from "../../services/api";
+
 import styles from "./styles.module.scss";
 
-interface CardLargeProps {
+interface ICardLargeProps {
   id: number;
   imageUrl: string;
   title: string;
-  rating: string;
+  rating: string | number;
 }
 
-export function CardLarge(props: CardLargeProps) {
+export function CardLarge({id, imageUrl, rating, title}: ICardLargeProps) {
   return (
-    <Link to={`/movie/${props.id}`}>
+    <Link to={`/movie/${id}`}>
       <div className={styles.cardLarge}>
-        <img src={`${IMG_URL}${props.imageUrl}`} className={styles.cardImg} />
-        <h3 className={styles.cardTitle}>{props.title}</h3>
-        <Rating score={props.rating} />
+        <img src={`${IMG_URL}${imageUrl}`} className={styles.cardImg} />
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <Rating score={rating} />
       </div>
     </Link>
   );
