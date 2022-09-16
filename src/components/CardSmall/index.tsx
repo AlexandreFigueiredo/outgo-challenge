@@ -32,7 +32,7 @@ export function CardSmall({id, imageUrl, rating, title}: CardSmallProps) {
                     <h3 className={styles.cardTitle}>
                         {title}
                     </h3>
-                    <Rating score={rating} />
+                    <Rating score={rating.toString()} />
                     <div className={styles.cardTags}>
                         {tags.map((tag) => <span key={tag.id}>{tag.name}</span>)}
                     </div>

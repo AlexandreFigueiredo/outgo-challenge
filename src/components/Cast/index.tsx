@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getCastByMovieId, IMG_URL } from '../../services/api';
+import { getCastByMovieId, ICast, IMG_URL } from '../../services/api';
 import styles from './styles.module.scss'
 
 interface ICastProps {
@@ -20,14 +20,14 @@ export function Cast({movieId}: ICastProps) {
     return (
         <div className={styles.cast}>
             {cast &&
-                cast.map((person: any, i: any) => {
+                cast.map((cast: ICast) => {
                     return (
-                        <div className={styles.castCard} key={i}>
-                            {person.profile_path ?
-                                <img className={styles.castImg} src={`${IMG_URL}${person.profile_path}`} alt={person.name} /> :
+                        <div className={styles.castCard} key={cast.id}>
+                            {cast.profile_path ?
+                                <img className={styles.castImg} src={`${IMG_URL}${cast.profile_path}`} alt={cast.name} /> :
                                 <div className={styles.castImg}></div>
                             }
-                            <h5 className={styles.castName}>{person.name}</h5>
+                            <h5 className={styles.castName}>{cast.name}</h5>
                         </div>
                     )
                 })

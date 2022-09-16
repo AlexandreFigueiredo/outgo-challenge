@@ -24,6 +24,12 @@ export type IMovieDetail = {
     original_language: string;
 }
 
+export type ICast = {
+    id: number;
+    profile_path: string;
+    name: string;
+}
+
 type IGetMoviesResponse = {
     results: IMovie[];
 }
@@ -34,7 +40,7 @@ type IGetGenresAndRuntimeByMovieIdResponse = {
 }
 
 type IGetCastByMovieIdResponse = {
-    cast: any;
+    cast: ICast[];
 }
 
 type IGetDetailsByMovieIdResponse = {

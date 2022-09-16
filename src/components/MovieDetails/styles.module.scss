@@ -10,8 +10,13 @@
     flex-direction: column;
     gap: 1rem;
 
-    .movieTitle {
-      font-size: 1.25rem;
+    .movieTitleWrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .movieTitle {
+        font-size: 1.25rem;
+      }
     }
 
     .movieTags {

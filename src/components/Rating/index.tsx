@@ -1,3 +1,4 @@
+import { AiFillStar } from 'react-icons/ai';
 import styles from "./styles.module.scss";
 
 interface RatingProps {
@@ -7,11 +8,7 @@ interface RatingProps {
 export function Rating(props: RatingProps) {
   return (
     <div className={styles.rating}>
-      <img
-        className={styles.ratingIcon}
-        src="/images/icon-star.png"
-        alt="Estrela"
-      />
+      <AiFillStar className={styles.ratingIcon} />
       <span>{props.score}/10 TMDB</span>
     </div>
   );
