@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
-import { getGenresAndRuntimeByMovieId, ITag } from '../../services/api';
+import { getGenresAndRuntimeByMovieId, IMG_URL, ITag } from '../../services/api';
 import { Rating } from '../Rating';
 import styles from './styles.module.scss'
 
@@ -27,7 +27,7 @@ export function CardSmall({id, imageUrl, rating, title}: CardSmallProps) {
     return (
         <Link to={`/movie/${id}`}>
             <div className={styles.cardSmall}>
-                <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} className={styles.cardImg} />
+                <img src={`${IMG_URL}${imageUrl}`} className={styles.cardImg} />
                 <div className={styles.cardContent}>
                     <h3 className={styles.cardTitle}>
                         {title}

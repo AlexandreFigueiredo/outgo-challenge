@@ -1,3 +1,4 @@
+export const IMG_URL = 'https://image.tmdb.org/t/p/original'
 const BASE_URL = 'https://api.themoviedb.org/3/movie'
 const API_KEY = '45d7491a8784c512d9adb5b759990897'
 

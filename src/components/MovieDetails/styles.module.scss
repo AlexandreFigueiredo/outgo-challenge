@@ -16,6 +16,7 @@
 
     .movieTags {
       display: flex;
+      align-items: center;
       gap: 0.5rem;
 
       span {
@@ -77,6 +78,7 @@
       margin-top: 0.5rem;
       color: var(--gray);
       font-size: 0.75rem;
+      line-height: 1.375rem;
     }
   }
   .movieCast {

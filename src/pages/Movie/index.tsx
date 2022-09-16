@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { MovieDetails } from '../../components/MovieDetails';
 import { MovieHeader } from "../../components/MovieHeader";
 import { PlayButton } from '../../components/PlayButton';
-import { getDetailsByMovieId, IMovie, IMovieDetail } from '../../services/api';
+import { getDetailsByMovieId, IMG_URL, IMovie, IMovieDetail } from '../../services/api';
 import styles from './styles.module.scss'
 
 export function Movie() {
@@ -11,7 +11,7 @@ export function Movie() {
     const [movie, setMovie] = useState<IMovieDetail>({} as IMovieDetail)
 
     const backgroundMovieHeaderPath = {
-        backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`
+        backgroundImage: `url(${IMG_URL}${movie.backdrop_path})`
     }
 
     useEffect(() => {
