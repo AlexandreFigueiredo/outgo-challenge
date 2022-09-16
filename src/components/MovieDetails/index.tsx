@@ -29,7 +29,7 @@ export function MovieDetails({
                 <h3 className={styles.movieTitle}>
                     {title}
                 </h3>
-                <Rating score={rating} />
+                <Rating score={(Math.round(rating * 100) / 100).toFixed(2)} />
                 <div className={styles.movieTags}>
                     {tags &&
                         tags.map((tag) => <span key={tag.id}>{tag.name}</span>)
@@ -48,7 +48,7 @@ export function MovieDetails({
                     </div>
                     <div className={styles.informationWrapper}>
                         <h4 className={styles.informationTitle}>Rating</h4>
-                        <p className={styles.informationContent}>{rating}</p>
+                        <p className={styles.informationContent}>{(Math.round(rating * 100) / 100).toFixed(2)}</p>
                     </div>
                 </div>
             </div>
