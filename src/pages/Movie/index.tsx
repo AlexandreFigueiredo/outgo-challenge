@@ -11,6 +11,7 @@ import styles from "./styles.module.scss";
 
 export function Movie() {
   const { movieId } = useParams();
+  
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [movie, setMovie] = useState<IMovieDetail>({} as IMovieDetail);
 

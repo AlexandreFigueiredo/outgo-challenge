@@ -30,6 +30,11 @@ export type ICast = {
   name: string;
 };
 
+export type ITrailer = {
+  key: string;
+  type: string;
+};
+
 type IGetMoviesResponse = {
   results: IMovie[];
 };
@@ -44,6 +49,10 @@ type IGetCastByMovieIdResponse = {
 };
 
 type IGetDetailsByMovieIdResponse = IMovieDetail;
+
+type IGetTrailerByMovieIdResponse = {
+  results: ITrailer[];
+};
 
 export const getGenresAndRuntimeByMovieId = async (
   movieId: string
@@ -64,6 +73,15 @@ export const getCastByMovieId = async (
 ): Promise<IGetCastByMovieIdResponse> => {
   const response = await fetch(
     `${BASE_URL}/${movieId}/credits?api_key=${API_KEY}&language=en-US`
+  );
+  return response.json();
+};
+
+export const getTrailerByMovieId = async (
+  movieId: string
+): Promise<IGetTrailerByMovieIdResponse> => {
+  const response = await fetch(
+    `${BASE_URL}/${movieId}/videos?api_key=${API_KEY}`
   );
   return response.json();
 };
