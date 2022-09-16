@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Loader } from "../../components/Loader";
 import { MovieDetails } from "../../components/MovieDetails";
 import { MovieHeader } from "../../components/MovieHeader";
 import { PlayButton } from "../../components/PlayButton";
@@ -13,6 +14,7 @@ import {
 import styles from "./styles.module.scss";
 
 export function Movie() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { movieID } = useParams();
   const [movie, setMovie] = useState<IMovieDetail>({} as IMovieDetail);
   const [trailer, setTrailer] = useState<ITrailer[]>([]);
@@ -22,6 +24,7 @@ export function Movie() {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     getDetailsByMovieId(movieID).then((response) => {
       setMovie(response);
     });
@@ -31,26 +34,34 @@ export function Movie() {
     //     results.filter((result) => result.type === "Trailer").slice(0, 1)
     //   );
     // });
+
+    setIsLoading(false);
   }, []);
 
   return (
     <>
-      <header
-        className={styles.movieHeaderWrapper}
-        style={backgroundMovieHeaderPath}
-      >
-        <MovieHeader />
-        <PlayButton trailerUrl={""} />
-      </header>
-      <MovieDetails
-        id={movieID}
-        title={movie.original_title}
-        rating={movie.vote_average}
-        description={movie.overview}
-        duration={movie.runtime}
-        language={movie.original_language}
-        tags={movie.genres}
-      />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <header
+            className={styles.movieHeaderWrapper}
+            style={backgroundMovieHeaderPath}
+          >
+            <MovieHeader />
+            <PlayButton trailerUrl={""} />
+          </header>
+          <MovieDetails
+            id={movieID}
+            title={movie.original_title}
+            rating={movie.vote_average}
+            description={movie.overview}
+            duration={movie.runtime}
+            language={movie.original_language}
+            tags={movie.genres}
+          />
+        </>
+      )}
     </>
   );
 }
