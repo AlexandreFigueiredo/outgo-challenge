@@ -24,8 +24,8 @@ export function NowShowing() {
     setIsLoading(true);
     getNowPlayingMovies().then(({ results }) => {
       setMovies(results);
+      setIsLoading(false);
     });
-    setIsLoading(false);
   }, []);
 
   return (

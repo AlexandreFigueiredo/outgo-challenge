@@ -13,6 +13,7 @@ interface ICardLargeProps {
 }
 
 export function CardLarge({id, imageUrl, rating, title}: ICardLargeProps) {
+
   return (
     <Link to={`/movie/${id}`}>
       <div className={styles.cardLarge}>

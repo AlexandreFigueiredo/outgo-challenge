@@ -28,8 +28,8 @@ export function CardSmall({ id, imageUrl, rating, title }: ICardSmallProps) {
     getGenresAndRuntimeByMovieId(id.toString()).then(({ genres, runtime }) => {
       setTags(genres);
       setRuntime(runtime);
+      setIsLoading(false);
     });
-    setIsLoading(false);
   }, []);
 
   return (

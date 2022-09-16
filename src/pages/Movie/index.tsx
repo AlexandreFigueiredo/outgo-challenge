@@ -19,8 +19,8 @@ export function Movie() {
       setIsLoading(true);
       getDetailsByMovieId(movieId).then((response) => {
         setMovie(response);
+        setIsLoading(false);
       });
-      setIsLoading(false);
     }
   }, []);
 

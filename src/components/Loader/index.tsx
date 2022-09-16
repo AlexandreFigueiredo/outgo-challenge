@@ -5,7 +5,9 @@ export function Loader() {
     <div className={styles.overlay}>
       <div className={styles.overlayInner}>
         <div className={styles.overlayContent}>
-          <span className={styles.spinner}></span>
+          <div className={styles.spinnerWrapper}>
+            <span className={styles.spinner}></span>
+          </div>
         </div>
       </div>
     </div>

@@ -4,7 +4,6 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background: rgba($color: var(--black), $alpha: 0.7);
 }
 
 .overlayInner {
@@ -20,15 +19,32 @@
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinnerWrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: var(--blue-900);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  filter: opacity(0.1);
 }
 
 .spinner {
-    width: 75px;
-    height: 75px;
+    width: 35px;
+    height: 35px;
     display: inline-block;
     border-width: 2px;
-    border-color: rgba($color: var(--black), $alpha: 0.2);
-    border-top-color: var(--white);
+    border-color: var(--white);
+    border-top-color: var(--blue-900);
     animation: spin 1s infinite linear;
     border-radius: 100%;
     border-style: solid;

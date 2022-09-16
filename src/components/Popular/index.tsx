@@ -14,8 +14,8 @@ export function Popular() {
     setIsLoading(true);
     getPopularMovies().then(({ results }) => {
       setMovies(results);
+      setIsLoading(false);
     });
-    setIsLoading(false);
   }, []);
 
   return (

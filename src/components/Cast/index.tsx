@@ -18,8 +18,9 @@ export function Cast({ movieId }: ICastProps) {
       setIsLoading(true);
       getCastByMovieId(movieId).then(({ cast }) => {
         setCast(cast.slice(0, 8));
+        setIsLoading(false);
       });
-      setIsLoading(false);
+      
     }
   }, []);
 

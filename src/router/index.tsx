@@ -8,7 +8,7 @@ export function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movie/:movieID" element={<Movie />} />
+        <Route path="/movie/:movieId" element={<Movie />} />
       </Routes>
     </BrowserRouter>
   );
