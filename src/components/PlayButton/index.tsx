@@ -8,11 +8,7 @@ import "../../../node_modules/react-modal-video/scss/modal-video.scss";
 import styles from "./styles.module.scss";
 import { Loader } from "../Loader";
 
-interface PlayButtonProps {
-  trailerUrl: string;
-}
-
-export function PlayButton({ trailerUrl }: PlayButtonProps) {
+export function PlayButton() {
   const { movieId } = useParams();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
