@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RiBookmarkFill,RiBookmarkLine } from "react-icons/ri";
 
-import { ITag } from "../../services/api";
+import { ITag } from "../../services/interfaces";
 import { Cast } from "../Cast";
 import { Rating } from "../Rating";
 import styles from "./styles.module.scss";

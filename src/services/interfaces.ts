@@ -26,11 +26,6 @@ export interface ICast {
   name: string;
 }
 
-export interface ITrailer {
-  key: string;
-  type: string;
-}
-
 export interface IGetMoviesResponse {
   results: IMovie[];
 }
@@ -45,7 +40,3 @@ export interface IGetCastByMovieIdResponse {
 }
 
 export interface IGetDetailsByMovieIdResponse extends IMovieDetail {}
-
-export interface IGetTrailerByMovieIdResponse {
-  results: ITrailer[];
-}

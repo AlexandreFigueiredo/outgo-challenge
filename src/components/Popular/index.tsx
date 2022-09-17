@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { getPopularMovies, IMovie } from "../../services/api";
+import { getPopularMovies } from "../../services/api";
+import { IMovie } from "../../services/interfaces";
 import { CardSmall } from "../CardSmall";
 import { Loader } from "../Loader";
 import styles from "./styles.module.scss";

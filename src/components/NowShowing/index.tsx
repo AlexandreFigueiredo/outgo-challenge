@@ -4,7 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 
-import { getNowPlayingMovies, IMovie } from "../../services/api";
+import { getNowPlayingMovies } from "../../services/api";
+import { IMovie } from "../../services/interfaces";
 import { CardLarge } from "../CardLarge";
 import { Loader } from "../Loader";
 import styles from "./styles.module.scss";

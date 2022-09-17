@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
-  getGenresAndRuntimeByMovieId,
-  ITag,
+  getGenresAndRuntimeByMovieId
 } from "../../services/api";
+import { ITag } from "../../services/interfaces";
 import { Loader } from "../Loader";
 import { Rating } from "../Rating";
 import styles from "./styles.module.scss";
