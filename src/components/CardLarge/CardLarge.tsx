@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "../Rating/Rating";
 import styles from "./styles.module.scss";
 
-const IMG_URL = import.meta.env.VITE_IMG_URL;
+const IMG_URL = process.env.IMG_URL;
 interface ICardLargeProps {
   id: number;
   imageUrl: string;

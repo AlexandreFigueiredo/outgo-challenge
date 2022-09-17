@@ -9,7 +9,7 @@ import { getDetailsByMovieId } from "../../services/api";
 import { IMovieDetail } from "../../services/interfaces";
 import styles from "./styles.module.scss";
 
-const IMG_URL = import.meta.env.VITE_IMG_URL;
+const IMG_URL = process.env.IMG_URL;
 
 export function Movie() {
   const { movieId } = useParams();
