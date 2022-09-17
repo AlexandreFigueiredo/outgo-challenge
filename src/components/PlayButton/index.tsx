@@ -1,12 +1,12 @@
+import "../../../node_modules/react-modal-video/scss/modal-video.scss";
+
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import ModalVideo from "react-modal-video";
+import { useParams } from "react-router-dom";
 
 import { getTrailerByMovieId, ITrailer } from "../../services/api";
-
-import "../../../node_modules/react-modal-video/scss/modal-video.scss";
-import styles from "./styles.module.scss";
 import { Loader } from "../Loader";
+import styles from "./styles.module.scss";
 
 export function PlayButton() {
   const { movieId } = useParams();
@@ -41,10 +41,10 @@ export function PlayButton() {
               onClose={() => setOpen(false)}
             />
           )}
-          <div className={styles.playButton} onClick={() => setOpen(true)}>
+          <button className={styles.playButton} onClick={() => setOpen(true)}>
             <img src="/images/play-button.png" alt="Play" />
             <p>Play Trailer</p>
-          </div>
+          </button>
         </>
       )}
     </>

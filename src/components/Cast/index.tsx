@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+
+import { getCastByMovieId, ICast } from "../../services/api";
 import { Loader } from "../Loader";
-
-import { getCastByMovieId, ICast, IMG_URL } from "../../services/api";
-
 import styles from "./styles.module.scss";
+
+const IMG_URL = import.meta.env.VITE_IMG_URL;
 
 interface ICastProps {
   movieId?: string;
