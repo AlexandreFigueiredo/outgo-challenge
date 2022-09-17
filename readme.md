@@ -28,7 +28,7 @@ $ git pull
 *This step can take a few minutes to be done*
 
 ```
-$ yarn && yarn dev
+$ yarn && yarn start
 ```
 
 ## Accessing the app

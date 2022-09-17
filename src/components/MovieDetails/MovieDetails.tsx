@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { RiBookmarkFill,RiBookmarkLine } from "react-icons/ri";
 
-import { ITag } from "../../services/api";
-import { Cast } from "../Cast";
-import { Rating } from "../Rating";
+import { ITag } from "../../services/interfaces";
+import { Cast } from "../Cast/Cast";
+import { Rating } from "../Rating/Rating";
 import styles from "./styles.module.scss";
 
 interface IMovieDetailsProps {

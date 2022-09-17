@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { Loader } from "../../components/Loader";
-import { MovieDetails } from "../../components/MovieDetails";
-import { MovieHeader } from "../../components/MovieHeader";
-import { PlayButton } from "../../components/PlayButton";
-import { getDetailsByMovieId, IMovieDetail } from "../../services/api";
+import { Loader } from "../../components/Loader/Loader";
+import { MovieDetails } from "../../components/MovieDetails/MovieDetails";
+import { MovieHeader } from "../../components/MovieHeader/MovieHeader";
+import { PlayButton } from "../../components/PlayButton/PlayButton";
+import { getDetailsByMovieId } from "../../services/api";
+import { IMovieDetail } from "../../services/interfaces";
 import styles from "./styles.module.scss";
 
 const IMG_URL = import.meta.env.VITE_IMG_URL;

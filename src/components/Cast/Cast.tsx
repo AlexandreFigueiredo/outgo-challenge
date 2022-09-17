@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { getCastByMovieId, ICast } from "../../services/api";
-import { Loader } from "../Loader";
+import { getCastByMovieId } from "../../services/api";
+import { ICast } from "../../services/interfaces";
+import { Loader } from "../Loader/Loader";
 import styles from "./styles.module.scss";
 
 const IMG_URL = import.meta.env.VITE_IMG_URL;
@@ -12,7 +13,7 @@ interface ICastProps {
 
 export function Cast({ movieId }: ICastProps) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [cast, setCast] = useState<any>([]);
+  const [cast, setCast] = useState<ICast[]>([]);
 
   useEffect(() => {
     if (movieId) {
@@ -32,7 +33,7 @@ export function Cast({ movieId }: ICastProps) {
       ) : (
         <div className={styles.cast}>
           {cast &&
-            cast.map((cast: ICast) => {
+            cast.map((cast) => {
               return (
                 <div className={styles.castCard} key={cast.id}>
                   {cast.profile_path ? (

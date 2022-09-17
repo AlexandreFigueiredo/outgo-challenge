@@ -3,7 +3,6 @@ import {
   IGetDetailsByMovieIdResponse,
   IGetGenresAndRuntimeByMovieIdResponse,
   IGetMoviesResponse,
-  IGetTrailerByMovieIdResponse,
 } from "./interfaces";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -28,15 +27,6 @@ export const getCastByMovieId = async (
 ): Promise<IGetCastByMovieIdResponse> => {
   const response = await fetch(
     `${BASE_URL}/${movieId}/credits?api_key=${API_KEY}&language=en-US`
-  );
-  return response.json();
-};
-
-export const getTrailerByMovieId = async (
-  movieId: string
-): Promise<IGetTrailerByMovieIdResponse> => {
-  const response = await fetch(
-    `${BASE_URL}/${movieId}/videos?api_key=${API_KEY}`
   );
   return response.json();
 };
