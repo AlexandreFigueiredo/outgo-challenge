@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 import { getPopularMovies } from "../../services/api";
 import { IMovie } from "../../services/interfaces";
-import { CardSmall } from "../CardSmall";
-import { Loader } from "../Loader";
+import { CardSmall } from "../CardSmall/CardSmall";
+import { Loader } from "../Loader/Loader";
 import styles from "./styles.module.scss";
 
 export function Popular() {

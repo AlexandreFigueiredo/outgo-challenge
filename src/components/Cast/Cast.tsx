@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { getCastByMovieId } from "../../services/api";
 import { ICast } from "../../services/interfaces";
-import { Loader } from "../Loader";
+import { Loader } from "../Loader/Loader";
 import styles from "./styles.module.scss";
 
 const IMG_URL = import.meta.env.VITE_IMG_URL;

@@ -6,8 +6,8 @@ import Slider from "react-slick";
 
 import { getNowPlayingMovies } from "../../services/api";
 import { IMovie } from "../../services/interfaces";
-import { CardLarge } from "../CardLarge";
-import { Loader } from "../Loader";
+import { CardLarge } from "../CardLarge/CardLarge";
+import { Loader } from "../Loader/Loader";
 import styles from "./styles.module.scss";
 
 export function NowShowing() {

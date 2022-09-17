@@ -5,8 +5,8 @@ import {
   getGenresAndRuntimeByMovieId
 } from "../../services/api";
 import { ITag } from "../../services/interfaces";
-import { Loader } from "../Loader";
-import { Rating } from "../Rating";
+import { Loader } from "../Loader/Loader";
+import { Rating } from "../Rating/Rating";
 import styles from "./styles.module.scss";
 
 const IMG_URL = import.meta.env.VITE_IMG_URL;
