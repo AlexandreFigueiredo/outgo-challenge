@@ -14,10 +14,22 @@ export function NowShowing() {
   const [movies, setMovies] = useState<IMovie[]>([]);
 
   const settings = {
+    draggable: false,
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 2.2,
+    slidesToShow: 6,
+    swipeToSlide: true,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          draggable: true,
+          slidesToShow: 2.2
+        }
+      }
+    ]
   };
 
   useEffect(() => {

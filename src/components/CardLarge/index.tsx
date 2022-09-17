@@ -12,15 +12,14 @@ interface ICardLargeProps {
   rating: string | number;
 }
 
-export function CardLarge({id, imageUrl, rating, title}: ICardLargeProps) {
-
+export function CardLarge({ id, imageUrl, rating, title }: ICardLargeProps) {
   return (
-    <Link to={`/movie/${id}`}>
-      <div className={styles.cardLarge}>
+    <div className={styles.cardLarge}>
+      <Link to={`/movie/${id}`}>
         <img src={`${IMG_URL}${imageUrl}`} className={styles.cardImg} />
-        <h3 className={styles.cardTitle}>{title}</h3>
-        <Rating score={rating} />
-      </div>
-    </Link>
+      </Link>
+      <h3 className={styles.cardTitle}>{title}</h3>
+      <Rating score={rating} />
+    </div>
   );
 }
