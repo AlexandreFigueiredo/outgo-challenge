@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import Slider from "react-slick";
-import { CardLarge } from "../CardLarge";
-import { Loader } from "../Loader";
-
-import { getNowPlayingMovies, IMovie } from "../../services/api";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import { useEffect, useState } from "react";
+import Slider from "react-slick";
+
+import { getNowPlayingMovies, IMovie } from "../../services/api";
+import { CardLarge } from "../CardLarge";
+import { Loader } from "../Loader";
 import styles from "./styles.module.scss";
 
 export function NowShowing() {

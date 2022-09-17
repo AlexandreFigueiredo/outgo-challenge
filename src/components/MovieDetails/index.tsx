@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { Cast } from "../Cast";
-import { Rating } from "../Rating";
-import { RiBookmarkLine, RiBookmarkFill } from "react-icons/ri";
+import { RiBookmarkFill,RiBookmarkLine } from "react-icons/ri";
 
 import { ITag } from "../../services/api";
-
+import { Cast } from "../Cast";
+import { Rating } from "../Rating";
 import styles from "./styles.module.scss";
 
 interface IMovieDetailsProps {
@@ -37,13 +36,13 @@ export function MovieDetails({
       <div className={styles.movieHeader}>
         <div className={styles.movieTitleWrapper}>
           <h3 className={styles.movieTitle}>{title}</h3>
-          <div className={styles.movieSave} onClick={toggleIsSaved}>
+          <button className={styles.movieSave} onClick={toggleIsSaved}>
             {isSaved ? (
               <RiBookmarkFill size={20} />
             ) : (
               <RiBookmarkLine size={20} />
             )}
-          </div>
+          </button>
         </div>
         <Rating score={(Math.round(Number(rating) * 100) / 100).toFixed(2)} />
         <div className={styles.movieTags}>

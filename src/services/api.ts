@@ -1,58 +1,13 @@
-export const IMG_URL = "https://image.tmdb.org/t/p/original";
-const BASE_URL = "https://api.themoviedb.org/3/movie";
-const API_KEY = "45d7491a8784c512d9adb5b759990897";
+import {
+  IGetCastByMovieIdResponse,
+  IGetDetailsByMovieIdResponse,
+  IGetGenresAndRuntimeByMovieIdResponse,
+  IGetMoviesResponse,
+  IGetTrailerByMovieIdResponse,
+} from "./interfaces";
 
-export type ITag = {
-  id: number;
-  name: string;
-};
-
-export type IMovie = {
-  id: number;
-  original_title: string;
-  poster_path: string;
-  vote_average: string;
-};
-
-export type IMovieDetail = {
-  original_title: string;
-  overview: string;
-  vote_average: number;
-  backdrop_path: string;
-  genres: ITag[];
-  runtime: number;
-  original_language: string;
-};
-
-export type ICast = {
-  id: number;
-  profile_path: string;
-  name: string;
-};
-
-export type ITrailer = {
-  key: string;
-  type: string;
-};
-
-type IGetMoviesResponse = {
-  results: IMovie[];
-};
-
-type IGetGenresAndRuntimeByMovieIdResponse = {
-  genres: ITag[];
-  runtime: number;
-};
-
-type IGetCastByMovieIdResponse = {
-  cast: ICast[];
-};
-
-type IGetDetailsByMovieIdResponse = IMovieDetail;
-
-type IGetTrailerByMovieIdResponse = {
-  results: ITrailer[];
-};
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export const getGenresAndRuntimeByMovieId = async (
   movieId: string

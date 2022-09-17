@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import { Loader } from "../../components/Loader";
 import { MovieDetails } from "../../components/MovieDetails";
 import { MovieHeader } from "../../components/MovieHeader";
 import { PlayButton } from "../../components/PlayButton";
-
-import { getDetailsByMovieId, IMG_URL, IMovieDetail } from "../../services/api";
-
+import { getDetailsByMovieId, IMovieDetail } from "../../services/api";
 import styles from "./styles.module.scss";
+
+const IMG_URL = import.meta.env.VITE_IMG_URL;
 
 export function Movie() {
   const { movieId } = useParams();
-  
+
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [movie, setMovie] = useState<IMovieDetail>({} as IMovieDetail);
 

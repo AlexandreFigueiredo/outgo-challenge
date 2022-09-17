@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Loader } from "../Loader";
-import { Rating } from "../Rating";
 
 import {
   getGenresAndRuntimeByMovieId,
-  IMG_URL,
   ITag,
 } from "../../services/api";
-
+import { Loader } from "../Loader";
+import { Rating } from "../Rating";
 import styles from "./styles.module.scss";
+
+const IMG_URL = import.meta.env.VITE_IMG_URL;
 
 interface ICardSmallProps {
   id: number;
@@ -39,7 +39,7 @@ export function CardSmall({ id, imageUrl, rating, title }: ICardSmallProps) {
       ) : (
         <Link to={`/movie/${id}`}>
           <div className={styles.cardSmall}>
-            <img src={`${IMG_URL}${imageUrl}`} className={styles.cardImg} />
+            <img src={`${IMG_URL}${imageUrl}`} className={styles.cardImg} alt={title} />
             <div className={styles.cardContent}>
               <h3 className={styles.cardTitle}>{title}</h3>
               <Rating score={rating.toString()} />

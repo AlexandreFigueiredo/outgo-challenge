@@ -40,8 +40,8 @@ $ yarn && yarn dev
 [You can access the app online using this link!](https://alexandrefigueiredo-outgo-challenge.netlify.app/)
 
 ## Framework and Languages
-[ReactJS](https://reactjs.org)
-[TypeScript](https://www.typescriptlang.org/)
+* [ReactJS](https://reactjs.org)
+* [TypeScript](https://www.typescriptlang.org/)
 ## Authors
 
 * **Alexandre Figueiredo** - [LinkedIn](https://www.linkedin.com/in/alefig) - [Github](https://gitlab.com/alexandrefigueiredo) - [Email](mailto:ale.fig1701@gmail.com)
