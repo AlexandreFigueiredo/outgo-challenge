@@ -11,7 +11,7 @@ describe("GetPopularMovies Service", () => {
     global.fetch = oFetch;
   });
   test("Should get movies when getPopularMovies method is called", async () => {
-    const popularMovies = {
+    const popularMovie = {
         "id": 238,
         "original_language": "en",
         "original_title": "The Godfather",
@@ -20,12 +20,12 @@ describe("GetPopularMovies Service", () => {
         "vote_average": 8.7
     }
 
-    const mockFetch = Promise.resolve({ json: () => Promise.resolve([popularMovies]) });
+    const mockFetch = Promise.resolve({ json: () => Promise.resolve([popularMovie]) });
 
     global.fetch = jest.fn().mockImplementation(() => mockFetch);
-    const tasks = await getPopularMovies();
+    const movies = await getPopularMovies();
 
     expect(global.fetch).toHaveBeenCalled();
-    expect(tasks).toStrictEqual([popularMovies]);
+    expect(movies).toStrictEqual([popularMovie]);
   });
 });
