@@ -19,6 +19,7 @@ export function NowShowing() {
     dots: false,
     infinite: false,
     speed: 500,
+    initialSlide: 0,
     slidesToShow: 6,
     swipeToSlide: true,
     slidesToScroll: 1,
