@@ -5,7 +5,7 @@ import { ICast } from "../../services/interfaces";
 import { Loader } from "../Loader/Loader";
 import styles from "./styles.module.scss";
 
-const IMG_URL = import.meta.env.VITE_IMG_URL;
+const IMG_URL = process.env.IMG_URL;
 
 interface ICastProps {
   movieId?: string;
